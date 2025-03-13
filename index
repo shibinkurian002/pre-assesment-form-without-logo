@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Assessment Form – 9-Step</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+
+    <header class="header-brand">
+        <h1>Resident Assessment Form</h1>
+    </header>
+
+    <form id="assessmentForm" class="form-container"> <section class="form-step active" id="step-1">
+            <h2>Step 1: General Information</h2>
+            <div class="input-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Mr/Mrs/Ms/Dr">
+            </div>
+
+            <div class="input-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName">
+            </div>
+
+            <div class="input-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName">
+            </div>
+
+            <div class="input-group">
+                <label for="preferredName">Preferred Name</label>
+                <input type="text" id="preferredName" name="preferredName">
+            </div>
+
+            <div class="input-group">
+                <label for="sexAtBirth">Sex at Birth</label>
+                <input type="text" id="sexAtBirth" name="sexAtBirth">
+            </div>
+
+            <div class="input-group">
+                <label for="genderIdentity">Gender Identity</label>
+                <input type="text" id="genderIdentity" name="genderIdentity" placeholder="Man/Woman/etc.">
+            </div>
+
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age (Auto-calc)</label>
+                <input type="text" id="age" name="age" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="residentPhone">Resident’s Phone Number</label>
+                <input type="text" id="residentPhone" name="residentPhone">
+            </div>
+
+            <div class="input-group">
+                <label for="residentEmail">Resident’s Email</label>
+                <input type="text" id="residentEmail" name="residentEmail">
+            </div>
+
+            <div class="input-group">
+                <label for="quickNotes">Quick Notes</label>
+                <textarea id="quickNotes" name="quickNotes" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="nhsNumber">NHS/CHI Number</label>
+                <input type="text" id="nhsNumber" name="nhsNumber">
+            </div>
+
+            <div class="input-group">
+                <label for="integrationId">Integration ID</label>
+                <small>(Generated or manually entered)</small>
+                <input type="text" id="integrationId" name="integrationId">
+            </div>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="dnacpr" name="dnacpr"> DNACPR in Place?</label>
+                <label><input type="checkbox" id="dols" name="dols"> DoLS in Place?</label>
+                <label><input type="checkbox" id="covid19" name="covid19"> Treating as COVID-19?</label>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="nextBtn1">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-2">
+            <h2>Step 2: Circle of Care</h2>
+            <div class="input-group">
+                <label for="nokFullName">Next of Kin Full Name</label>
+                <input type="text" id="nokFullName" name="nokFullName">
+            </div>
+
+            <div class="input-group">
+                <label for="nokRelationship">Relationship</label>
+                <input type="text" id="nokRelationship" name="nokRelationship" placeholder="Daughter, Son, etc.">
+            </div>
+
+            <div class="input-group">
+                <label for="nokPhone">Phone Number</label>
+                <input type="text" id="nokPhone" name="nokPhone">
+            </div>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="poaHealth" name="poaHealth"> Power of Attorney for Health?</label>
+                <label><input type="checkbox" id="poaFinance" name="poaFinance"> Power of Attorney for Finance?</label>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn2">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn2">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-3">
+            <h2>Step 3: Onboarding &amp; Needs Assessment</h2>
+            <div class="input-group">
+                <label for="dateAdmission">Date of Admission</label>
+                <input type="date" id="dateAdmission" name="dateAdmission">
+            </div>
+
+            <div class="input-group">
+                <label for="admittedFrom">Admitted From</label>
+                <input type="text" id="admittedFrom" name="admittedFrom" placeholder="Hospital, Home, Another Facility">
+            </div>
+
+            <div class="input-group">
+                <label for="fundingSource">Funding Source</label>
+                <input type="text" id="fundingSource" name="fundingSource" placeholder="NHS, Private, Local Authority">
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn3">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn3">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-4">
+            <h2>Step 4: Clinical Information</h2>
+            <div class="input-group">
+                <label for="allergies">Allergies &amp; Intolerances</label>
+                <textarea id="allergies" name="allergies" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="dietaryPreferences">Dietary Preferences &amp; Nutrition Needs</label>
+                <textarea id="dietaryPreferences" name="dietaryPreferences" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="emergencyInfo">Emergency Information &amp; Admission Decision</label>
+                <textarea id="emergencyInfo" name="emergencyInfo" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="clinicalHistory">Clinical History &amp; Medical Conditions</label>
+                <textarea id="clinicalHistory" name="clinicalHistory" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="medicationList">Medication List</label>
+                <textarea id="medicationList" name="medicationList" rows="3"></textarea>
+            </div>
+
+            <div class="must-section">
+                <h3>MUST (Malnutrition Universal Screening Tool)</h3>
+                <div class="input-group">
+                    <label for="currentWeight">Current Weight (kg)</label>
+                    <input type="number" id="currentWeight" name="currentWeight" step="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="currentHeight">Current Height (m)</label>
+                    <input type="number" id="currentHeight" name="currentHeight" step="0.01">
+                </div>
+
+                <div class="input-group">
+                    <label for="bmiScore">BMI Score (Auto-calc)</label>
+                    <input type="text" id="bmiScore" name="bmiScore" readonly>
+                </div>
+
+                <div class="input-group">
+                    <label for="weightLoss">Weight Loss in Past 3-6 Months (%)</label>
+                    <input type="number" id="weightLoss" name="weightLoss" step="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="mustScore">Overall MUST Score</label>
+                    <input type="text" id="mustScore" name="mustScore" placeholder="Low/Med/High or numeric">
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn4">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn4">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-5">
+            <h2>Step 5: Mandatory Care Plan Sections</h2>
+
+            <div class="input-group">
+                <label for="advancedPlanning">Advanced Planning / End of Life (EOL)</label>
+                <small>DNACPR or ReSPECT forms? Wishes for final days (music, visitors)? Funeral arrangements? Any POA or LPA? Cultural/religious preferences?</small>
+                <textarea id="advancedPlanning" name="advancedPlanning" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="cognition">Cognition</label>
+                <small>Describe the resident’s cognitive abilities, any memory issues, dementia diagnosis, and support strategies in place.</small>
+                <textarea id="cognition" name="cognition" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="communication">Communication</label>
+                <small>Explain how the resident communicates, including any hearing or speech impairments, use of communication aids, and preferred methods.</small>
+                <textarea id="communication" name="communication" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="continenceCare">Continence Care</label>
+                <small>Specify the type and size of continence products used, frequency of changes, level of assistance required, toileting routines.</small>
+                <textarea id="continenceCare" name="continenceCare" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="emotionalWellbeing">Emotional Well-being &amp; Mental Health</label>
+                <small>Include details of emotional and psychological well-being, any mental health conditions, coping mechanisms, and support in place.</small>
+                <textarea id="emotionalWellbeing" name="emotionalWellbeing" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="sexuality">Expressing Sexuality</label>
+                <small>Describe how the resident presents themselves, including preferences for clothing, makeup, jewelry, gender identity, and social interactions.</small>
+                <textarea id="sexuality" name="sexuality" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="lifeEnrichment">Life Enrichment &amp; Social Activities</label>
+                <small>Detail the resident’s hobbies, interests, social preferences, and participation in activities within or outside the care home.</small>
+                <textarea id="lifeEnrichment" name="lifeEnrichment" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="medicationManagement">Medication Management</label>
+                <small>List all medications the resident takes, their purpose, any known side effects, dietary restrictions, and instructions. Signpost to Camascope for details.</small>
+                <textarea id="medicationManagement" name="medicationManagement" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="mobilityDexterity">Mobility &amp; Dexterity</label>
+                <small>Include whether the resident is left-handed, their ability to use buttons/zips, specialist equipment, history of falls, gait, any infections impacting mobility.</small>
+                <textarea id="mobilityDexterity" name="mobilityDexterity" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="nutritionHydration">Nutrition &amp; Hydration</label>
+                <small>Describe dietary needs, food preferences, allergies, risk of choking, use of adaptive cutlery, hydration support.</small>
+                <textarea id="nutritionHydration" name="nutritionHydration" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="oralHealth">Oral Health Care</label>
+                <small>Specify if the resident has their own teeth, dentures, cleaning routine, type of toothbrush, mouthwash, and visits to dentist/hygienist.</small>
+                <textarea id="oralHealth" name="oralHealth" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="personalCare">Personal Care &amp; Hygiene</label>
+                <small>Describe assistance needed for washing, showering, bathing, shaving, hair care, use of products, and dressing. Include hand, foot, and nail care.</small>
+                <textarea id="personalCare" name="personalCare" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="physicalHealth">Physical Health &amp; Well-being</label>
+                <small>Include diagnoses, ongoing treatments, support from healthcare professionals, and any pain management strategies.</small>
+                <textarea id="physicalHealth" name="physicalHealth" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="skinIntegrity">Skin Integrity &amp; Pressure Care</label>
+                <small>Describe skin conditions, risk of pressure sores, use of emollients or prescribed creams, involvement of DN or TVN.</small>
+                <textarea id="skinIntegrity" name="skinIntegrity" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="sleepingNightCare">Sleeping &amp; Night Care</label>
+                <small>Detail night-time routine, positioning, preference for lights on/off, use of call bells, comfort needs, nighttime checks required.</small>
+                <textarea id="sleepingNightCare" name="sleepingNightCare" rows="3"></textarea>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn5">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn5">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-6">
+            <h2>Step 6: Specialist Care Plans (If Applicable)</h2>
+
+            <div class="input-group">
+                <label for="antiCoagulant">Anti-Coagulant Management</label>
+                <small>Warfarin, INR checks, bridging therapy, bleeding risk, instructions</small>
+                <textarea id="antiCoagulant" name="antiCoagulant" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="breathing">Breathing (COPD/Asthma)</label>
+                <small>Inhalers, rescue meds, triggers, oxygen usage, etc.</small>
+                <textarea id="breathing" name="breathing" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="cancerCare">Cancer Care</label>
+                <small>Chemotherapy, radiotherapy, pain mgmt, psychological support, etc.</small>
+                <textarea id="cancerCare" name="cancerCare" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="chokingRisk">Choking Risk &amp; SALT Assessment</label>
+                <small>Swallow assessment, pureed diet, staff supervision, SALT recommendations</small>
+                <textarea id="chokingRisk" name="chokingRisk" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="diabetesCare">Diabetes Care &amp; Foot Health</label>
+                <small>Insulin/oral meds, blood sugar checks, foot checks, diet guidance</small>
+                <textarea id="diabetesCare" name="diabetesCare" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="epilepsy">Epilepsy Management</label>
+                <small>Seizure triggers, rescue meds, frequency, post-seizure protocol</small>
+                <textarea id="epilepsy" name="epilepsy" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="heartDisease">Heart Disease &amp; Stroke Recovery</label>
+                <small>Angina, heart failure, stroke rehab, physiotherapy, BP checks</small>
+                <textarea id="heartDisease" name="heartDisease" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="challengingBehaviours">Managing Behaviours that Challenge</label>
+                <small>Known triggers, de-escalation, ABC charts, PRN usage if relevant</small>
+                <textarea id="challengingBehaviours" name="challengingBehaviours" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="moneyManagement">Money Management Support</label>
+                <small>Access to finances, who handles money, any spending restrictions</small>
+                <textarea id="moneyManagement" name="moneyManagement" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="painManagement">Pain Management Plan</label>
+                <small>Analgesics, side effects, pain scale, non-pharm approaches, etc.</small>
+                <textarea id="painManagement" name="painManagement" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="parkinsons">Parkinson’s Care</label>
+                <small>Time-sensitive meds, tremor mgmt, swallowing issues, mobility concerns</small>
+                <textarea id="parkinsons" name="parkinsons" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="smokingAlcohol">Smoking, Vaping, Alcohol &amp; Drug Use</label>
+                <small>Frequency, harm reduction, safe storage, nicotine replacements, etc.</small>
+                <textarea id="smokingAlcohol" name="smokingAlcohol" rows="3"></textarea>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn6">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn6">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-7">
+            <h2>Step 7: Foot Care Assessment</h2>
+            <div class="input-group">
+                <label for="existingFootConditions">Existing Foot Conditions (Bunions, Ulcers, Corns)</label>
+                <textarea id="existingFootConditions" name="existingFootConditions" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="toenailCutting">Toenail Cutting Needs</label>
+                <small>Chiropodist visits? Staff assist with moisturizing? etc.</small>
+                <textarea id="toenailCutting" name="toenailCutting" rows="3"></textarea>
+            </div>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="diabetesFoot" name="diabetesFoot"> Diabetes-related Foot Concerns?</label>
+                <label><input type="checkbox" id="orthopedicFootwear" name="orthopedicFootwear"> Orthopedic Footwear Required?</label>
+            </div>
+
+            <div class="input-group">
+                <label for="podiatryVisits">Podiatry Visits (Frequency &amp; Details)</label>
+                <textarea id="podiatryVisits" name="podiatryVisits" rows="3"></textarea>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn7">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn7">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-8">
+            <h2>Step 8: Staff Sign-Off</h2>
+            <div class="input-group">
+                <label for="completedBy">Assessment Completed By</label>
+                <input type="text" id="completedBy" name="completedBy">
+            </div>
+
+            <div class="input-group">
+                <label for="dateCompletion">Date of Completion</label>
+                <input type="date" id="dateCompletion" name="dateCompletion">
+            </div>
+
+            <div class="input-group">
+                <label for="homeManagerApproval">Home Manager Approval</label>
+                <input type="text" id="homeManagerApproval" name="homeManagerApproval">
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn8">Previous</button>
+                <button type="button" class="btn-nav" id="nextBtn8">Next</button>
+            </div>
+        </section>
+
+        <section class="form-step" id="step-9">
+            <h2>Step 9: Preview &amp; PDF</h2>
+            <small>Click “Generate Summary” to see your inputs, or “Download PDF” to save a copy.</small>
+
+            <div class="btn-container">
+                <button type="button" class="btn-nav" id="prevBtn9">Previous</button>
+                <button type="button" class="btn-nav" id="generateSummaryBtn">Generate Summary</button>
+                <button type="button" class="btn-nav" id="downloadPdfBtn">Download PDF</button>
+            </div>
+
+            <div class="input-group">
+                <label for="summary">Pre-Assessment Summary</label>
+                <textarea id="summary" readonly></textarea>
+            </div>
+        </section>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script> </body>
+</html>
